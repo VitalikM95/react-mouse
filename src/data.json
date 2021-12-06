@@ -1,0 +1,72 @@
+{
+"id": 1,
+"name": "Мышь игровая Logitech PRO X",
+"price": 4999,
+"image": "img/items/1.webp"
+},
+{
+"id": 2,
+"name": "Мышь Razer Mamba - Gears of War 5",
+"price": 4499,
+"image": "img/items/2.webp"
+},
+{
+"id": 3,
+"name": "Мышь Logitech MX Master 3",
+"price": 5555,
+"image": "img/items/3.webp"
+},
+{
+"id": 4,
+"name": "Мышь Logitech MX Vertical",
+"price": 3999,
+"image": "img/items/4.webp"
+},
+{
+"id": 5,
+"name": "Игровая мышь SteelSeries Prime",
+"price": 3799,
+"image": "img/items/5.webp"
+},
+{
+"id": 6,
+"name": "Игровая мышь Razer Viper Ultimate",
+"price": 4799,
+"image": "img/items/6.webp"
+},
+{
+"id": 7,
+"name": "Мышь игровая Logitech G604 Lightspeed",
+"price": 3999,
+"image": "img/items/7.webp"
+},
+{
+"id": 8,
+"name": "Игровая мышь HyperX Pulsefire Dart",
+"price": 3499,
+"image": "img/items/8.webp"
+},
+{
+"id": 9,
+"name": "Игровая мышь DeathAdder V2 Pro",
+"price": 4699,
+"image": "img/items/9.webp"
+},
+{
+"id": 10,
+"name": "Игровая мышь Razer Pro Click",
+"price": 4299,
+"image": "img/items/10.webp"
+},
+{
+"id": 11,
+"name": "Мышь игровая Logitech G502 HERO",
+"price": 4899,
+"image": "img/items/11.webp"
+},
+{
+"id": 12,
+"name": "Мышь игровая ASUS ROG Keris",
+"price": 3999,
+"image": "img/items/12.webp"
+}
