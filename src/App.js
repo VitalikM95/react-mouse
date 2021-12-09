@@ -21,9 +21,9 @@ function App() {
       try {
         const [cartResponse, favouriteResponse, itemsResponse] =
           await Promise.all([
-            axios.get('http://localhost:3001/cart'),
-            axios.get('http://localhost:3001/favourite'),
-            axios.get('http://localhost:3001/items'),
+            axios.get('https://react-mouse.herokuapp.com/cart'),
+            axios.get('https://react-mouse.herokuapp.com/favourite'),
+            axios.get('https://react-mouse.herokuapp.com/items'),
           ])
 
         setIsLoading(false)
@@ -77,11 +77,13 @@ function App() {
         setFavouriteItems(prev =>
           prev.filter(item => Number(item.id) !== Number(obj.id))
         )
-        await axios.delete(`http://localhost:3001/favourite/${findFavItem.id}`)
+        await axios.delete(
+          `https://react-mouse.herokuapp.com/favourite/${findFavItem.id}`
+        )
       } else {
         setFavouriteItems(prev => [...prev, obj])
         const { data } = await axios.post(
-          'http://localhost:3001/favourite',
+          'https://react-mouse.herokuapp.com/favourite',
           obj
         )
         setFavouriteItems(prev =>
@@ -103,7 +105,7 @@ function App() {
 
   const onRemoveItem = id => {
     try {
-      axios.delete(`http://localhost:3001/cart/${id}`)
+      axios.delete(`https://react-mouse.herokuapp.com/cart/${id}`)
       setCartItems(prev => prev.filter(item => Number(item.id) !== Number(id)))
     } catch (error) {
       alert('Ошибка удаления с корзины!')

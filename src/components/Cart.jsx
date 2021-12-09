@@ -12,15 +12,18 @@ const Cart = ({ onCloseCart, onRemove, opened }) => {
   const onClickOrder = async () => {
     try {
       setIsLoading(true)
-      const { data } = await axios.post('http://localhost:3001/orders', {
-        items: cartItems,
-      })
+      const { data } = await axios.post(
+        'https://react-mouse.herokuapp.com/orders',
+        {
+          items: cartItems,
+        }
+      )
       setOrderId(data.id)
       setIsOrderComplete(true)
       setCartItems([])
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i]
-        await axios.delete(`http://localhost:3001/cart/${item.id}`)
+        await axios.delete(`https://react-mouse.herokuapp.com/cart/${item.id}`)
       }
     } catch (error) {
       alert('Не удалось создать заказ!')
