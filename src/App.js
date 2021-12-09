@@ -21,9 +21,9 @@ function App() {
       try {
         const [cartResponse, favouriteResponse, itemsResponse] =
           await Promise.all([
-            axios.get('http://localhost:3000/cart'),
-            axios.get('http://localhost:3000/favourite'),
-            axios.get('http://localhost:3000/items'),
+            axios.get('http://localhost:3001/cart'),
+            axios.get('http://localhost:3001/favourite'),
+            axios.get('http://localhost:3001/items'),
           ])
 
         setIsLoading(false)
@@ -47,10 +47,10 @@ function App() {
         setCartItems(prev =>
           prev.filter(item => Number(item.id) !== Number(obj.id))
         )
-        await axios.delete(`http://localhost:3000/cart/${findCartItem.id}`)
+        await axios.delete(`http://localhost:3001/cart/${findCartItem.id}`)
       } else {
         setCartItems(prev => [...prev, obj])
-        const { data } = await axios.post('http://localhost:3000/cart', obj)
+        const { data } = await axios.post('http://localhost:3001/cart', obj)
         setCartItems(prev =>
           prev.map(item => {
             if (item.id === data.id) {
@@ -77,11 +77,11 @@ function App() {
         setFavouriteItems(prev =>
           prev.filter(item => Number(item.id) !== Number(obj.id))
         )
-        await axios.delete(`http://localhost:3000/favourite/${findFavItem.id}`)
+        await axios.delete(`http://localhost:3001/favourite/${findFavItem.id}`)
       } else {
         setFavouriteItems(prev => [...prev, obj])
         const { data } = await axios.post(
-          'http://localhost:3000/favourite',
+          'http://localhost:3001/favourite',
           obj
         )
         setFavouriteItems(prev =>
@@ -103,7 +103,7 @@ function App() {
 
   const onRemoveItem = id => {
     try {
-      axios.delete(`http://localhost:3000/cart/${id}`)
+      axios.delete(`http://localhost:3001/cart/${id}`)
       setCartItems(prev => prev.filter(item => Number(item.id) !== Number(id)))
     } catch (error) {
       alert('Ошибка удаления с корзины!')

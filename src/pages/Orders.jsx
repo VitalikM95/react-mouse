@@ -10,7 +10,7 @@ const Orders = () => {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const { data } = await axios.get('http://localhost:3000/orders')
+        const { data } = await axios.get('http://localhost:3001/orders')
         setOrders(data)
         setIsLoading(false)
       } catch (error) {

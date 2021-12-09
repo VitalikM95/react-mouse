@@ -12,7 +12,7 @@ const Cart = ({ onCloseCart, onRemove, opened }) => {
   const onClickOrder = async () => {
     try {
       setIsLoading(true)
-      const { data } = await axios.post('http://localhost:3000/orders', {
+      const { data } = await axios.post('http://localhost:3001/orders', {
         items: cartItems,
       })
       setOrderId(data.id)
@@ -20,7 +20,7 @@ const Cart = ({ onCloseCart, onRemove, opened }) => {
       setCartItems([])
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i]
-        await axios.delete(`http://localhost:3000/cart/${item.id}`)
+        await axios.delete(`http://localhost:3001/cart/${item.id}`)
       }
     } catch (error) {
       alert('Не удалось создать заказ!')
