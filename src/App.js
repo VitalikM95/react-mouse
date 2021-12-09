@@ -47,10 +47,10 @@ function App() {
         setCartItems(prev =>
           prev.filter(item => Number(item.id) !== Number(obj.id))
         )
-        await axios.delete(`http://localhost:3001/cart/${findCartItem.id}`)
+        await axios.delete(`https://react-mouse.herokuapp.com/cart/${findCartItem.id}`)
       } else {
         setCartItems(prev => [...prev, obj])
-        const { data } = await axios.post('http://localhost:3001/cart', obj)
+        const { data } = await axios.post('https://react-mouse.herokuapp.com/cart', obj)
         setCartItems(prev =>
           prev.map(item => {
             if (item.id === data.id) {
