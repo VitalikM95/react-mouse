@@ -22,12 +22,12 @@ const Header = ({ onClickCart }) => {
           <span>{totalPrice} грн.</span>
         </li>
         <li>
-          <Link to='/favourite'>
+          <Link to='/favourite-page'>
             <img src='img/favourite.svg' alt='#' width={21} height={19} />
           </Link>
         </li>
         <li>
-          <Link to='/orders'>
+          <Link to='/orders-page'>
             <img src='img/user.svg' alt='#' width={20} height={20} />
           </Link>
         </li>

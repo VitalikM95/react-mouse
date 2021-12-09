@@ -37,7 +37,6 @@ const Orders = () => {
                   <Card key={index} loading={isLoading} {...arr} />
                 ))}
               </div>
-              '1'
             </div>
           ))}
         </div>
